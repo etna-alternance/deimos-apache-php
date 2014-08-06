@@ -49,5 +49,5 @@ RUN chmod +x /usr/local/bin/forego
 EXPOSE 80
 
 WORKDIR /app
-ENTRYPOINT ["/usr/local/bin/forego"]
-CMD ["start", "web"]
+ENTRYPOINT ["/usr/local/bin/forego", "start"]
+CMD ["web"]
