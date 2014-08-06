@@ -43,5 +43,8 @@ ENV APACHE_LOG_DIR /var/log/apache2/
 # Crée le /app
 RUN ln -s /tmp/mesos-sandbox /app
 
+RUN wget https://godist.herokuapp.com/projects/ddollar/forego/releases/current/linux-amd64/forego -O /usr/local/bin/forego
+RUN chmod +x /usr/local/bin/forego
+
 EXPOSE 80
-CMD /usr/sbin/apache2 -D FOREGROUND && tail -f /var/log/apache2/access.log /var/log/apache2/error.log
+CMD forego start web
