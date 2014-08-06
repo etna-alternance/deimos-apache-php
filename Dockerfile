@@ -47,4 +47,7 @@ RUN wget https://godist.herokuapp.com/projects/ddollar/forego/releases/current/l
 RUN chmod +x /usr/local/bin/forego
 
 EXPOSE 80
-CMD forego start web
+
+WORKDIR /app
+ENTRYPOINT ["/usr/local/bin/forego"]
+CMD ["start", "web"]
